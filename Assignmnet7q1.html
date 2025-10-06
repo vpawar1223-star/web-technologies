@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunbeam Registration Form</title>
+    <style>
+        #logo {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="./image.png" alt="Sunbeam logo" title="Sunbeam" id="logo">
+        <h2>Sunbeam Registration Form</h2>
+    </div>
+    <table>
+        <tbody>
+            <tr>
+                <td> <iframe height="200" width="360"
+                        src="https://www.youtube.com/embed/Az5Bt3zUtiM?si=6x-vu9pjK1kzgLUf" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></td>
+
+                <td>
+                    <form>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><label for="inputName"><b>Name:</b></label></td>
+                                    <td><input type="text" id="inputName">
+                                        <div id="invalidname" style="color: red;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="date"><b>BirthDate:</b></label></td>
+                                    <td><input type="date" id="date">
+                                        <div id="invaliddate" style="color: red;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="inputemail"><b>Email:</b></label></td>
+                                    <td><input type="email" id="inputemail">
+                                        <div id="invalidemail" style="color: red;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="inputpass"><b>Password:</b></label></td>
+                                    <td><input type="password" id="inputpass">
+                                        <div id="invalidpass" style="color: red;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="inputadd"><b>Address:</b></label></td>
+                                    <td><input textarea name="" id="inputadd">
+                                        <div id="invalidadd" style="color: red;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label><b>Gender:</b></label></td>
+                                    <td>
+                                        <input type="radio" name="gender" id="genderM">Male
+                                        <input type="radio" name="gender" id="genderF">Female
+                                        <div id="invalidgender" style="color: red;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="photo"><b>Upload Photo:</b></label></td>
+                                    <td>
+                                        <input type="file" id="photo">
+                                        <div id="invalidphoto" style="color: red;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="course"><b>Select your Course:</b></label>
+                                    </td>
+                                    <td>
+                                        <select name="Course" id="course">
+                                            <option hidden>Select course</option>
+                                            <option value="DAC">PG-DAC</option>
+                                            <option value="DMC">PG-DMC</option>
+                                            <option value="DITISS">PG-DITISS</option>
+                                            <option value="DBDA">PG-DBDA</option>
+                                        </select>
+                                        <div id="invalidcourse" style="color: red;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="checkbox"><b>Skill Set:</b></label>
+                                    </td>
+                                    <td><input type="checkbox" name="checkbox Java" value="JAVA" id="java">Java
+                                        <input type="checkbox" name="checkbox cpp" value="CPP" id="cpp">CPP
+                                        <input type="checkbox" name="checkbox os" value="OS" id="os">OS
+                                        <div id="invalidskill" style="color: red;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="Register" id="submit">
+                                        <input type="reset" value="Clear" id="cls">
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <script>
+
+
+
+                            document.getElementById('submit').addEventListener("click", function (event) { 
+                                event.preventDefault()
+                                let valid = true
+                                let name = document.getElementById('inputName').value
+                                let date = document.getElementById('date').value
+                                let email = document.getElementById('inputemail').value.trim()
+                                let pass = document.getElementById('inputpass').value
+                                let add = document.getElementById('inputadd').value.trim()
+                                let photo = document.getElementById('photo').value
+                                let course = document.getElementById('course').value
+                                let genderM = document.getElementById('genderM').checked
+                                let genderF = document.getElementById('genderF').checked
+                                let JAVA = document.getElementById('java').checked
+                                let CPP = document.getElementById('cpp').checked
+                                let OS = document.getElementById('os').checked
+
+                                //name valid
+                                if (name === "" || name.length > 10) {
+                                    document.getElementById('invalidname').innerText = "Name is Required and max 10 chars allowed."
+                                    valid = false
+                                }
+                                else {
+                                    for (let i = 0; i < name.length; i++) {
+                                        if (!((name[i] >= "a" && name[i] <= 'z') || (name[i] >= "A" && name[i] <= 'Z'))) {
+                                            document.getElementById('invalidname').innerText = 'Only alphabets are allowed.'
+                                            valid = false
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                //dob
+                                if (date === "") {
+                                    document.getElementById("invaliddate").innerText = 'Birthdate is required.'
+                                    valid = false
+                                }
+                                else {
+                                    dob = new Date(date)
+                                    today = new Date()
+                                    let age = today.getFullYear() - dob.getFullYear()
+                                    m = today.getMonth() - dob.getMonth()
+                                    if (m < 0 || (m === 0 && (today.getDate() > dob.getDate()))) {
+                                        age--
+                                    }
+                                    else if (age < 18) {
+                                        document.getElementById("invaliddate").innerText = 'You must be atleast 18'
+                                        valid = false
+                                    }
+                                    else if (dob > today) {
+                                        document.getElementById("invaliddate").innerText = 'Must be a past date'
+                                        valid = false
+                                    }
+
+                                }
+
+                                //email
+                                if (email === "") {
+                                    document.getElementById("invalidemail").innerText = 'email is required.'
+                                    valid = false
+                                }
+
+                                //password
+                                let foundhash = false
+                                let founddigit = false
+                                if (pass === "") {
+                                    document.getElementById("invalidpass").innerText = "Password is required."
+                                    valid = false
+                                }
+                                else {
+                                    if (pass.length<9) {
+                                        document.getElementById("invalidpass").innerText = "Password must be atleast 9 characters, contain # and one digit."
+                                        valid = false
+                                    }
+                                    else {
+                                        for (let i = 0; i < pass.length; i++) {
+                                            if (pass[i] === '#') { foundhash = true }
+                                            else if (pass[i] >= '0' && pass[i] <= '9') { founddigit = true }
+                                        }
+                                        if (!founddigit || !foundhash) {
+                                            document.getElementById("invalidpass").innerText = "Password must be atleast 9 characters, contain # and one digit."
+                                            valid = false
+                                        }
+                                    }
+                                }
+
+                                //address
+                                if (add === "") {
+                                    document.getElementById("invalidadd").innerText = 'Address is required.'
+                                    valid = false
+                                }
+
+                                //gender
+                                if (!(genderF || genderM)) {
+                                    document.getElementById("invalidgender").innerText = 'Gender is required'
+                                    valid = false
+                                }
+
+                                //photo
+                                if (photo === "") {
+                                    document.getElementById("invalidphoto").innerText = 'Photo is required.'
+                                    valid = false
+                                }
+
+                                //course
+                                if (course === "Select course") {
+                                    document.getElementById("invalidcourse").innerText = 'Please select a course.'
+                                    valid = false
+                                }
+
+                                //skill
+                                if (!(JAVA || OS || CPP)) {
+                                    document.getElementById("invalidskill").innerText = 'Please select a skill.'
+                                    valid = false
+                                }
+
+                                if (valid) {
+
+                                    sessionStorage.setItem('Name',name)
+                                    sessionStorage.setItem('BirthDate',date)
+                                    sessionStorage.setItem('Email',email)
+                                    sessionStorage.setItem('pass',pass)
+                                    sessionStorage.setItem('Address',add) 
+                                    sessionStorage.setItem('Gender',genderM ? 'Male':'Female')
+                                    sessionStorage.setItem('Photo',photo)
+                                    sessionStorage.setItem('Course',course)
+                                    
+                                    let skill=[]
+                                    if(java){
+                                        skill.push('JAVA')
+                                        if(cpp){
+                                            skill.push('CPP')
+                                            if(os){
+                                                skill.push('OS')
+                                            }
+                                        }
+                                    }
+                                    sessionStorage.setItem('Skills',skill.join(", "))                                  
+                                }   
+                            })
+
+                        </script>
+
+</body>
+
+</html>

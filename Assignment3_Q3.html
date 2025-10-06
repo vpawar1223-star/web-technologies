@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunbeam</title>
+
+    <style>
+        *{
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        #header-nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: hsl(204, 100%, 28%);
+            height: 50px;
+            color: white;
+        }
+
+        #nav-div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #nav-div li{
+            display: inline-block;
+            margin: 5px;
+        }
+
+        header h3{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #new-section{
+            height: 200px;
+            width: 100%;
+            background-color: #c3eef9;
+            color: black;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #new-section-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        #new-section-container img{
+            height : 100px;
+            width: 150px;
+            margin: 10px;
+            /* border : 2px solid block; */
+        }
+
+        .line{
+            width: 100%;
+            height: 10px;
+            background-color: hsl(204, 100%, 28%);
+        }
+
+        #home{
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+
+            padding: 10px;
+            background-color: gainsboro;
+        }
+
+        #home-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        #home-container img{
+            height: 200px;
+            width : 150px;
+            margin: 10px;
+        }
+
+        #home-container div{
+            margin: 10px;
+        }
+
+        #course{
+            height: 200px;
+            width: 100%;
+            background-color: #c3eef9;
+            color: black;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #course-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        #course-container img{
+            height: 100px;
+            width: 100px;
+        }
+
+        #contact-us{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: gainsboro;
+             border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            padding: 20px;
+        }
+
+        #contact-us-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #Hinjewadi, #Karad{
+            color: blue;
+            margin-right: 5px;
+        }
+
+        footer{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            background-color: hsl(204, 100%, 28%);
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="header-nav">
+            <div id="nav-div">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Courses</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </nav>
+
+        <h3>Sunbeam Institute of Technology</h3>
+    </header>
+
+    <section id="new-section">
+        <h3>Home Section</h3>
+
+        <div id="new-section-container">
+            <img src="./images/new2.png" alt="img2">
+            <img src="./images/new2.png" alt="img2">
+            <img src="./images/new2.png" alt="img2">
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <section id="home">
+        <h3>About Sunbeam Section</h3>
+
+        <div id="home-container">
+            
+            <img src="./images/sunbeam.png" alt="sunbeam">
+        
+
+            <div>
+                <p>
+                    At Sunbeam we believe retaining a competitive edge is imperative for any individual in today's professional world.  <br> Companies are restructuring their organizations & reengineering their business processes. <br>
+                    Not only have the challenges become more demanding, but also the rewards of staying at the forefront seem to be promising. <br>
+                    In this scenario, technical & personal skills which provide effective solutions & time critical support are of principal significance for the long term growth of professionals. <br> Sunbeam's expertise in effectively delivering training, 
+                    solutions & services has made it a favored institution to many students & professionals focused on an aggressive career growth strategy. <br>
+                    Sunbeam's proven track record in bringing about effective transformations in individuals is backed by a solid understanding of the rapidly changing needs of the industry & the global business scenario. <br> Sunbeam's success has been built on its 
+                    comprehensively researched, innovative training methodologies, deployment of technology and an emphasis on transformational & industry-relevant programs offering value-added services to its clients. <br> A young and dynamic management team and 
+                    carefully recruited and trained staff members drive Sunbeam's business vision & have established strong credentials in a short span of time. <br>
+                    Sunbeam Group's expertise in effectively delivering training & solutions has made it a favored associate to many establishments focused on aggressive growth strategies. <br> 
+                    Since it's humble beginnings in the late 90's Sunbeam Group has today, evolved into a multi-technology, multi-location competency center with IT professionals capable of delivering high-end technological training & solutions in diverse modes.
+                    Their expertise in various IT fields has made Sunbeam Group a premium turnkey solution provider.
+                </p>
+                
+            </div>
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <section id="course">
+        <h3>Course Section</h3>
+
+        <div id="course-container">
+            <div><img src="./images/DAC.png" alt="DAC"></div>
+            <div><img src="./images/DMC.png" alt="DMC"></div>
+            <div><img src="./images/DBDA.png" alt="DBDA"></div>
+            <div><img src="./images/DITTIS.png" alt="DITTIS"></div>
+            <div><img src="./images/Cyber.png" alt="Cyber"></div>
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <section id="contact-us">
+        <h3>Contact Us</h3>
+
+        <div id="contact-us-container">
+            <div id="Hinjewadi">
+                <p>Sunbeam Hinjewadi Pune</p>
+                <br>
+
+                <p>
+                        Authorized Training Center of C-DAC ACTS <br>
+                        "Sunbeam IT Park", Ground Floor, Phase 2 of Rajiv Gandhi <br>
+                        Infotech Park, Hinjewadi, Pune - 411057, MH-INDIA
+                </p>
+                <br>
+                <p>
+                        +91 82 82 9805 / +91 82 82 82 9806 <br>
+                        siitAsunbeaminfo.com
+                </p>
+            </div>
+
+            <div id="Karad">
+                <p>Sunbeam Karad</p>
+                <br>
+
+                <p>
+                        Authorized Training Center of C-DAC ACTS <br>
+                        "Anuda Chambers", 203 Shaniwar Peth, Near Gujar <br>
+                        Hospital, Karad, 415 110, Dist. Satara, MH-INDIA
+                </p>
+                <br>
+                <p>
+                        +91 82 82 9805 / 02164 - 225500, 225800 <br>
+                        siitAsunbeaminfo.com
+                </p>
+                <br>
+                <p>
+                    
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div id="rights">
+            <p>Sunbeam. &copy; 2025. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

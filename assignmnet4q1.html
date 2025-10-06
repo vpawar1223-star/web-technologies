@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let val1=window.prompt("Enter first number")
+        while(val1<0){
+            alert("Please enter valid number")
+            val1=window.prompt("Enter first number")
+            break
+            }
+        
+        
+         let val2=window.prompt("Enter second number")
+             while(val2<0){
+            alert("Please enter valid number")
+            window.prompt("Enter second number")
+            break
+            }
+
+         let val3= window.prompt("Enter third number")
+        while(val3<0){
+            alert("Please enter valid number")
+            window.prompt("Enter third number")
+            break
+            }
+         
+        let num=Math.max(val1,val2,val3)
+        console.log(num)
+        alert("the gretest number is :"+num)
+    </script>
+</body>
+</html>

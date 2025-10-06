@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="showDateGreetings()">
+    <h1 id="id_h1"><b>Date & Greeting Web Page</b></h1>
+    <p class="p1"></p>
+</body >
+<script>
+    function showDateGreetings(){
+        const today= new Date();
+        const weekdays=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+        const months=["January","February","March","April","May","June","July","August","September","October","November","December"]
+        const weekday=weekdays[today.getDay()]
+        const day= today.getDate();
+        const month= months[today.getMonth()]
+        const year=today.getFullYear();
+        const time=today.getTime()
+        const hour=today.getHours()
+        let Greeting
+        if(hour<12){
+            Greeting="Good Morning to You."
+        }
+        else if(hour<18){
+            Greeting="Good Afternoon to You"
+        }
+        else{
+        Greeting="Good Evening to You"
+        }
+         
+        today.setFullYear(2025,12,31)
+        const t1=today.getTime() // it will return set time
+        const diff=(t1-time)/86400000
+        console.log(diff)
+        const p1=document.getElementsByClassName("p1")[0]
+        p1.innerHTML = `<h2><span style="color:red;">
+            Today is ${weekday}, ${day} ${month} ${year},<br>
+                          Welcome, and ${Greeting} <br>
+                          Number of days left till end of year:</span> <span style="color:blue"> ${diff} </span></h2>`
+        
+    }
+</script>
+</html>

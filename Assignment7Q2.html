@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment7-Q2</title>
+    <style>
+        *{
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Employee Names</h1>
+    <div style="display: flex;">
+        <div><input type="text" placeholder="Enter employee name" id="empName"></div>
+        <div style="margin-left: 5px;"><button onclick="addName()">Add Name</button></div>
+        <div style="margin-left: 5px;"><button onclick="sortDisplay()">Sort & Display</button></div>       
+    </div>
+    <h3>Sorted Employee Names:</h3>
+    <ul id="list"></ul>
+    <script>
+        let emp=[]
+        function addName(){
+            if(emp.length<6){
+                let value=document.getElementById('empName').value
+                emp.push(value)
+                console.log(emp)
+        
+            }
+            else{
+                window.alert("You have already entered 6 names")
+            }
+        }
+        function sortDisplay(){
+            let sortedEmp=emp.sort()
+            sortedEmp.forEach(element => {
+                document.getElementById('list').innerHTML+=`<li>${element}</li>`
+            });
+        }
+
+    </script>
+</body>
+</html>
